@@ -1,8 +1,19 @@
 {
-  "name": "react_custom_modal",
+  "name": "adrienc_custom_modal_popup",
+  "description": "custom modal openclassroom's project",
+  "author": "AdrienC",
+  "keywords": ["modal", "customisable", "react", "simple", "front-end", "react-component"],
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acapolungo/adriencapolungo_react_custom_modal_react"
+},
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -13,6 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build-lib": "set NODE_ENV=production rimraf dist && babel src/lib --out-dir dist --copy-files",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,5 +46,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11"
   }
 }

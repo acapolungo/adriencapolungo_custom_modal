@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Modal } from './lib'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h1>Publish npm package component with this boilerplate</h1>
+
+      <Modal
+        zindex={'z-10'}
+        modal={''}
+        onClose={''}
+        backdropStyle={{ backgroundColor: 'rgba(21, 23, 43, 0.65)' }}
+        modalStyle={{ backgroundColor: '#303245', color: 'white' }}
+        header='Votre header'
+        text='Votre texte'
+      />
+    </>
+  )
 }
 
 export default App;

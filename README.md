@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# A simple & lightweight method to display custom modal pop up.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+adrienc_custom_modal_popup is a quite simple modal, with content box and close button. By default the modal window is screen's centered horizontaly and verticaly. It's really easy to customize it with all sorts of props.
 
-## Available Scripts
+## Link to npm :
 
-In the project directory, you can run:
+You can install adrienc_custom_modal_popup with npm:
+My React component : npm
 
-### `npm start`
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npm install adrienc_custom_modal_popup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### How to
+```
+import { Modal } from 'adrienc_custom_modal_popup';
+```
 
-### `npm test`
+Then you can use and customize the component :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+<Modal 
+    zindex={}
+    modal={}
+    onClose={}
+    backdropStyle={}
+    modalStyle={}
+    header={}
+    text={}
+/>
+```
 
-### `npm run build`
+#### z-index :
+You can access the background className with props :
+```
+zindex={z-10}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### header :
+header - which one can customize the header
+```
+header={props}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### text :
+text - which one can customize the text
+```
+text={props}
+```
+#### modal :
+modal - Boolean property which will decide wheather the modal is open or not.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### modalStyle :
+modalStyle - With which one can customize the styling of visible modal window.
+```
+modalStyle={{ backgroundColor: '#303245', color: 'white' }}
+```
 
-### `npm run eject`
+#### modalStyle :
+backdropStyle - With which one can customize the styling of the backdrop of modal window.
+```
+backdropStyle={{ backgroundColor: 'rgba(21, 23, 43, 0.65)' }}
+```
+#### modalStyle :
+onClose - Event handler with which one can write logic to close the modal.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Mode informations :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To show or hide your modal window i recommand this method. Add this in your parent component :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+const [modal, setModal] = useState(false);
+const handleClick = () => {
+    setModal(true);
+    };
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+And to hide your modal use close button :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+{modal && (
+    <Modal
+        modal={modal}
+        onClose={() => setModal(false)}
+        backdropStyle={{ custom inline style }}
+        modalStyle={{ custom inline style}}
+        header='Your Header'
+        text='Your text'
+    />
+)}
+```
