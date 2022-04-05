@@ -3,14 +3,14 @@
   "description": "custom modal openclassroom's project",
   "author": "AdrienC",
   "keywords": ["modal", "customisable", "react", "simple", "front-end", "react-component"],
-  "version": "0.1.0",
+  "version": "0.1.11",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [ "dist", "README.md" ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acapolungo/adriencapolungo_react_custom_modal_react"
+    "url": "git+https://github.com/acapolungo/adriencapolungo_custom_modal"
 },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
